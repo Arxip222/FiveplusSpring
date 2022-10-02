@@ -1,69 +1,75 @@
 <!-- ======= Sidebar ======= -->
 
   <ul th:fragment="menu" class="sidebar-nav" id="sidebar-nav">
-
     <li class="nav-item">
-      <a class="nav-link " href="parents_home/startLess" data-toggle="modal" data-target="#exampleModalLong">
-        <i class="bi bi-grid"></i>
-        <h3>Заниматься</h3>
+      <a class="nav-link collapsed" href="" data-toggle="modal" data-target="#exampleModalLong">
+        <h3 style="margin-top: 10px;">Заниматься</h3>
       </a>
     </li><!-- End Dashboard Nav -->
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="parents_home/chats">
-        <i class="bi bi-person"></i>
-        <h3>Чаты c учителями</h3>
+      <a class="nav-link collapsed" href="chats">
+        <h3 style="margin-top: 10px;">Чаты c учителями</h3>
       </a>
     </li><!-- End Profile Page Nav -->
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="parents_home/history">
-        <i class="bi bi-question-circle"></i>
-        <h3>История занятий</h3>
+      <a class="nav-link collapsed" href="history">
+        <h3 style="margin-top: 10px;">История занятий</h3>
       </a>
     </li><!-- End F.A.Q Page Nav -->
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="parents_home/activate">
-        <i class="bi bi-envelope"></i>
-        <h3>Активация</h3>
+      <a class="nav-link collapsed" href="activation">
+        <h3 style="margin-top: 10px;">Активация</h3>
       </a>
       <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
         Launch demo modal
       </button>-->
 
-      <div class="modal fade" id="exampleModalLong" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal fade" tabindex="-1" id="exampleModalLong" data-backdrop="false" data-keyboard="true" style="background-color: rgba(0, 0, 0, 0.5);" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <div class="modal-header" hidden="true"></div>
+            <div class="modal-body">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
-              </button>
+              </button><br><br>
+               <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#MomentLess" style="margin:auto;display:block; width:270px; background-color:#d1d1d1">Поиск моментального занятия</button><br>
+               <button type="button" class="btn btn-outline-dark" style="margin:auto;display:block; width:270px; background-color:#d1d1d1">Запланировать занятие</button><br>
+               <button type="button" class="btn btn-outline-dark" style="margin:auto;display:block; width:270px; background-color:#d1d1d1">Запланированные</button><br>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="MomentLess" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5)" role="dialog" aria-labelledby="MomentLessTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header" hidden="true"></div>
             <div class="modal-body">
-              <p>Modal body text goes here.</p>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button><br><br>
+              <h1>Moment less</h1>
             </div>
-            <div class="modal-footer">
+            <!--<div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+            </div>-->
           </div>
         </div>
       </div>
     </li><!-- End Contact Page Nav -->
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="parents_home/help">
-        <i class="bi bi-card-list"></i>
-        <h3>Поддержка</h3>
+      <a class="nav-link collapsed" href="help">
+        <h3 style="margin-top: 10px;">Поддержка</h3>
       </a>
     </li><!-- End Register Page Nav -->
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="parents_home/logout">
-        <i class="bi bi-box-arrow-in-right"></i>
-        <h3>Выйти</h3>
+      <a class="nav-link collapsed" href="logout">
+        <h3 style="margin-top: 10px;">Выйти</h3>
       </a>
     </li><!-- End Login Page Nav -->
   </ul>

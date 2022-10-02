@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
@@ -9,29 +9,31 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  <!-- Favicons -->
+  <link th:href="@{/assets/img/favicon.png}" rel="icon">
+  <link th:href="@{/assets/img/apple-touch-icon.png}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link th:href="@{/assets/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/boxicons/css/boxicons.min.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/quill/quill.snow.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/quill/quill.bubble.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/remixicon/remixicon.css}" rel="stylesheet">
+  <link th:href="@{/assets/vendor/simple-datatables/style.css}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}" />
+
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.4.0
@@ -45,21 +47,21 @@
 
   <!-- ======= Header ======= -->
   <header th:insert="blocks/header_parent :: header" id="header" class="header fixed-top d-flex align-items-center"></header>
-  <aside th:insert="blocks/menu_parent :: menu" id="sidebar" class="sidebar"></aside>
 
+  <!-- ======= Sidebar ======= -->
+  <aside th:insert="blocks/menu_parent :: menu" id="sidebar" class="sidebar"></aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
-    <!-- <div class="pagetitle">
-       <h1>Dashboard</h1>
-       <nav>
-         <ol class="breadcrumb">
-           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-           <li class="breadcrumb-item active">Dashboard</li>
-         </ol>
-       </nav>
-     </div>
-    -->
+    <!--<div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+      </nav>
+    </div> -->
 
     <section class="section dashboard">
       <div class="row">
@@ -257,6 +259,7 @@
               </div>
             </div><!-- End Reports -->
 
+            <!-- Recent Sales -->
             <div class="col-12">
               <div class="card recent-sales overflow-auto">
 
@@ -328,9 +331,9 @@
                 </div>
 
               </div>
-            </div>
+            </div><!-- End Recent Sales -->
 
-
+            <!-- Top Selling -->
             <div class="col-12">
               <div class="card top-selling overflow-auto">
 
@@ -362,35 +365,35 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
+                        <th scope="row"><a href="#"><img th:src="@{/assets/img/product-1.jpg}" alt=""></a></th>
                         <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
                         <td>$64</td>
                         <td class="fw-bold">124</td>
                         <td>$5,828</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-2.jpg" alt=""></a></th>
+                        <th scope="row"><a href="#"><img th:src="@{/assets/img/product-2.jpg}" alt=""></a></th>
                         <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
                         <td>$46</td>
                         <td class="fw-bold">98</td>
                         <td>$4,508</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-3.jpg" alt=""></a></th>
+                        <th scope="row"><a href="#"><img th:src="@{/assets/img/product-3.jpg}" alt=""></a></th>
                         <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
                         <td>$59</td>
                         <td class="fw-bold">74</td>
                         <td>$4,366</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-4.jpg" alt=""></a></th>
+                        <th scope="row"><a href="#"><img th:src="@{/assets/img/product-4.jpg}" alt=""></a></th>
                         <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
                         <td>$32</td>
                         <td class="fw-bold">63</td>
                         <td>$2,016</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-5.jpg" alt=""></a></th>
+                        <th scope="row"><a href="#"><img th:src="@{/assets/img/product-5.jpg}" alt=""></a></th>
                         <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
                         <td>$79</td>
                         <td class="fw-bold">41</td>
@@ -402,15 +405,15 @@
                 </div>
 
               </div>
-            </div>
+            </div><!-- End Top Selling -->
 
           </div>
-        </div>
+        </div><!-- End Left side columns -->
 
-
+        <!-- Right side columns -->
         <div class="col-lg-4">
 
-
+          <!-- Recent Activity -->
           <div class="card">
             <div class="filter">
               <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
@@ -436,7 +439,7 @@
                   <div class="activity-content">
                     Quia quae rerum <a href="#" class="fw-bold text-dark">explicabo officiis</a> beatae
                   </div>
-                </div>
+                </div><!-- End activity item-->
 
                 <div class="activity-item d-flex">
                   <div class="activite-label">56 min</div>
@@ -444,7 +447,7 @@
                   <div class="activity-content">
                     Voluptatem blanditiis blanditiis eveniet
                   </div>
-                </div>
+                </div><!-- End activity item-->
 
                 <div class="activity-item d-flex">
                   <div class="activite-label">2 hrs</div>
@@ -452,7 +455,7 @@
                   <div class="activity-content">
                     Voluptates corrupti molestias voluptatem
                   </div>
-                </div> End activity item
+                </div><!-- End activity item-->
 
                 <div class="activity-item d-flex">
                   <div class="activite-label">1 day</div>
@@ -460,7 +463,7 @@
                   <div class="activity-content">
                     Tempore autem saepe <a href="#" class="fw-bold text-dark">occaecati voluptatem</a> tempore
                   </div>
-                </div> End activity item
+                </div><!-- End activity item-->
 
                 <div class="activity-item d-flex">
                   <div class="activite-label">2 days</div>
@@ -468,7 +471,7 @@
                   <div class="activity-content">
                     Est sit eum reiciendis exercitationem
                   </div>
-                </div> End activity item
+                </div><!-- End activity item-->
 
                 <div class="activity-item d-flex">
                   <div class="activite-label">4 weeks</div>
@@ -476,12 +479,12 @@
                   <div class="activity-content">
                     Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
                   </div>
-                </div> End activity item
+                </div><!-- End activity item-->
 
               </div>
 
             </div>
-          </div>
+          </div><!-- End Recent Activity -->
 
           <!-- Budget Report -->
           <div class="card">
@@ -655,31 +658,31 @@
 
               <div class="news">
                 <div class="post-item clearfix">
-                  <img src="assets/img/news-1.jpg" alt="">
+                  <img th:src="@{/assets/img/news-1.jpg}" alt="">
                   <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
                   <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
                 </div>
 
                 <div class="post-item clearfix">
-                  <img src="assets/img/news-2.jpg" alt="">
+                  <img th:src="@{/assets/img/news-2.jpg}" alt="">
                   <h4><a href="#">Quidem autem et impedit</a></h4>
                   <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
                 </div>
 
                 <div class="post-item clearfix">
-                  <img src="assets/img/news-3.jpg" alt="">
+                  <img th:src="@{/assets/img/news-3.jpg}" alt="">
                   <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>
                   <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...</p>
                 </div>
 
                 <div class="post-item clearfix">
-                  <img src="assets/img/news-4.jpg" alt="">
+                  <img th:src="@{/assets/img/news-4.jpg}" alt="">
                   <h4><a href="#">Laborum corporis quo dara net para</a></h4>
                   <p>Qui enim quia optio. Eligendi aut asperiores enim repellendusvel rerum cuder...</p>
                 </div>
 
                 <div class="post-item clearfix">
-                  <img src="assets/img/news-5.jpg" alt="">
+                  <img th:src="@{/assets/img/news-5.jpg}" alt="">
                   <h4><a href="#">Et dolores corrupti quae illo quod dolor</a></h4>
                   <p>Odit ut eveniet modi reiciendis. Atque cupiditate libero beatae dignissimos eius...</p>
                 </div>
@@ -713,17 +716,17 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/chart.js/chart.min.js"></script>
-  <script src="assets/vendor/echarts/echarts.min.js"></script>
-  <script src="assets/vendor/quill/quill.min.js"></script>
-  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script th:src="@{/assets/vendor/apexcharts/apexcharts.min.js}"></script>
+  <script th:src="@{/assets/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+  <script th:src="@{/assets/vendor/chart.js/chart.min.js}"></script>
+  <script th:src="@{/assets/vendor/echarts/echarts.min.js}"></script>
+  <script th:src="@{/assets/vendor/quill/quill.min.js}"></script>
+  <script th:src="@{/assets/vendor/simple-datatables/simple-datatables.js}"></script>
+  <script th:src="@{/assets/vendor/tinymce/tinymce.min.js}"></script>
+  <script th:src="@{/assets/vendor/php-email-form/validate.js}"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script th:src="@{/assets/js/main.js}"></script>
 
 </body>
 
