@@ -15,8 +15,13 @@ public class ParentsController {
     }
 
     @GetMapping("/")
-    public String parentsMain() {
-        return "redirect:profile";
+    public String parentsMain1() {
+        return "redirect:parents_home/profile";
+    }
+
+    @GetMapping("")
+    public String parentsMain2() {
+        return "redirect:parents_home/profile";
     }
 
     @GetMapping("/chats")
