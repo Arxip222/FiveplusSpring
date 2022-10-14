@@ -56,10 +56,11 @@
                   <label class="input-group-text" for="inputGroupSubject">Предмет</label>
                 </div>
                 <select class="custom-select" id="inputGroupSubject">
-                  <option selected>Choose...</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                  <option selected>Выберите предмет...</option>
+                  <option value="1">Математика</option>
+                  <option value="2">Русский язык</option>
+                  <option value="3">История</option>
+                  <option value="4">Обществознание</option>
                 </select>
               </div>
 
@@ -68,7 +69,7 @@
                   <label class="input-group-text" for="inputGroupChild">Ребенок</label>
                 </div>
                 <select class="custom-select" id="inputGroupChild">
-                  <option selected>Choose...</option>
+                  <option selected>Выберите ребенка...</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
@@ -103,7 +104,10 @@
     </li><!-- End Register Page Nav -->
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="logout">
+      <form th:action="@{/logout}" method="post" th:hidden="true" name="logoutForm">
+        <input type="submit" value="Logout">
+      </form>
+      <a class="nav-link collapsed" href="javascript:document.logoutForm.submit()">
         <h3 style="margin-top: 10px;">Выйти</h3>
       </a>
     </li><!-- End Login Page Nav -->
